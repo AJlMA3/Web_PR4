@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>RPG Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-card">
+        <h1>RPG Task Manager</h1>
+    
+        <div class="char-section">
+            <div class="avatar-container" id="avatar-display" onclick="changeAvatar()">🧙‍♂️</div>
+            
+            <div class="char-info">
+                <div><strong>Герой:</strong> <span id="char-name">Странник</span></div>
+                <div><strong>Уровень:</strong> <span id="level" style="color: #daa520; font-size: 1.2em;">1</span></div>
+                <div class="exp-row">
+                    <div class="progress-container"><div id="exp-fill"></div></div>
+                    <div style="font-size: 0.8em; min-width: 80px; text-align: right;">
+                        <span id="current-xp">0</span> / <span id="next-lvl-xp">100</span> XP
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="new-task-section">
+            <div class="input-row">
+                <input type="text" id="task-name" placeholder="Название квеста...">
+                <select id="task-diff">
+                    <option value="10">Легкий (+10 XP)</option>
+                    <option value="25">Средний (+25 XP)</option>
+                    <option value="50">Сложный (+50 XP)</option>
+                    <option value="100">Эпический (+100 XP)</option>
+                </select>
+                <button class="btn-add" onclick="addTask()">Добавить в журнал</button>
+            </div>
+        </div>
+    
+        <div id="task-list"></div>
+    
+        <div class="stats-section">
+            <div>Завершено: <span id="total-done">0</span></div>
+            <div>Всего славы: <span id="total-xp">0</span> XP</div>
+        </div>
+        
+        <p style="text-align: center;"><small onclick="resetGame()" style="cursor:pointer; color: #666;">[Сбросить прогресс]</small></p>
+    </div>
+<script src="js/storage.js"></script>
+<script src="js/character.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
